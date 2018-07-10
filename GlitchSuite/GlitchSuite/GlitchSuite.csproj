@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GlitchSuite.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,6 +78,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GlitchFiles\BinaryGlitchFile.cs" />
+    <Compile Include="GlitchFiles\BitmapGlitchFile.cs" />
+    <Compile Include="GlitchFiles\GlitchFileBase.cs" />
+    <Compile Include="GlitchFiles\GlitchFileFactory.cs" />
+    <Compile Include="GlitchFiles\IGlitchFile.cs" />
+    <Compile Include="Helper\FileOperator.cs" />
+    <Compile Include="Helper\IFileOperator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
