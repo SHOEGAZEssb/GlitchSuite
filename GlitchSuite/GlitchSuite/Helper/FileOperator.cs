@@ -5,7 +5,7 @@ namespace GlitchSuite.Helper
   /// <summary>
   /// Interfaces with files.
   /// </summary>
-  class FileOperator : IFileOperator
+  public class FileOperator : IFileOperator
   {
     /// <summary>
     /// Deletes the specified file.

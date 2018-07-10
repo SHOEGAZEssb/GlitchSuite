@@ -23,7 +23,7 @@
     protected override void ReadHeaderInfo()
     {
       // read bfOffBits (start of image data) (offset: 10)
-      DataOffset = RawData[9];
+      DataOffset = RawData[10];
     }
 
     #endregion Construction

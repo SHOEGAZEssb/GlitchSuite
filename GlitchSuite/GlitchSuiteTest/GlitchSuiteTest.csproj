@@ -64,8 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlitchFileTests\BitmapGlitchFileTest.cs" />
-    <Compile Include="GlitchFileTests\GlitchFileFactoryTest.cs" />
+    <Compile Include="IntegrationTests\GlitchFileTests\BitmapGlitchFileTest.cs" />
+    <Compile Include="UnitTests\GlitchFileTests\BitmapGlitchFileTest.cs" />
+    <Compile Include="UnitTests\GlitchFileTests\GlitchFileFactoryTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +79,10 @@
       <Project>{df3b90a1-5c34-4881-9072-795f9864877a}</Project>
       <Name>GlitchSuite</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IntegrationTests\TestData\Images\Bitmaps\TestPattern_1280x800.bmp" />
+    <Content Include="IntegrationTests\TestData\Images\Bitmaps\TestPattern_1280x800_BW.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

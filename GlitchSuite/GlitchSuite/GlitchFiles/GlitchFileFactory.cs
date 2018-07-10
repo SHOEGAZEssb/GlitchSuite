@@ -29,6 +29,13 @@ namespace GlitchSuite.GlitchFiles
       _fileOperator = fileOperator ?? throw new ArgumentNullException(nameof(fileOperator));
     }
 
+    /// <summary>
+    /// Constructor.
+    /// </summary>
+    public GlitchFileFactory()
+      : this(new FileOperator())
+    { }
+
     #endregion Construction
 
     /// <summary>

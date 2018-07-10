@@ -1,7 +1,7 @@
 ﻿using GlitchSuite.GlitchFiles;
 using NUnit.Framework;
 
-namespace GlitchSuiteTest.GlitchFileTests
+namespace GlitchSuiteTest.UnitTests.GlitchFileTests
 {
   /// <summary>
   /// Tests for the <see cref="BitmapGlitchFile"/>.
@@ -17,7 +17,7 @@ namespace GlitchSuiteTest.GlitchFileTests
     public void ReadHeaderInfoTest()
     {
       // given: fake data
-      byte[] data = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 60, 10, 11, 12 };
+      byte[] data = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 60, 11, 12 };
 
       // when: creating the BitmapGlitchFile
       BitmapGlitchFile bm = new BitmapGlitchFile(data);
