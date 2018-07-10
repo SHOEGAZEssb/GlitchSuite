@@ -14,6 +14,13 @@ namespace GlitchSuite.GlitchFiles
     /// </summary>
     public byte[] RawData { get; private set; }
 
+    /// <summary>
+    /// Offset of the data block of the <see cref="RawData"/>.
+    /// This means, at this position the "real" data of the
+    /// file begins.
+    /// </summary>
+    public int DataOffset { get; protected set; }
+
     #endregion Properties
 
     #region Construction
@@ -28,5 +35,10 @@ namespace GlitchSuite.GlitchFiles
     }
 
     #endregion Construction
+
+    /// <summary>
+    /// Reads different information from the header.
+    /// </summary>
+    protected abstract void ReadHeaderInfo();
   }
 }

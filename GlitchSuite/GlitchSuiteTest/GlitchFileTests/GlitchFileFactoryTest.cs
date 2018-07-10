@@ -2,13 +2,8 @@
 using GlitchSuite.Helper;
 using Moq;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GlitchSuiteTest
+namespace GlitchSuiteTest.GlitchFileTests
 {
   /// <summary>
   /// Tests for the <see cref="GlitchFileFactory"/>.
@@ -24,7 +19,7 @@ namespace GlitchSuiteTest
     {
       // given: IFileOperator Mock
       string path = "C:\\TestImage.bmp";
-      byte[] bytes = new byte[] { 1, 2, 3, 4, 5 };
+      byte[] bytes = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
       Mock<IFileOperator> fileOperatorMock = new Mock<IFileOperator>(MockBehavior.Strict);
       fileOperatorMock.Setup(f => f.ReadAllBytes(path)).Returns(bytes);

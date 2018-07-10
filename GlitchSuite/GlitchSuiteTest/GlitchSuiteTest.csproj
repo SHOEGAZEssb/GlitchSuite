@@ -64,7 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlitchFileFactoryTest.cs" />
+    <Compile Include="GlitchFileTests\BitmapGlitchFileTest.cs" />
+    <Compile Include="GlitchFileTests\GlitchFileFactoryTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
