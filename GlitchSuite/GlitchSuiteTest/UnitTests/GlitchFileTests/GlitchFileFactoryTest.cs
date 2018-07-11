@@ -33,5 +33,17 @@ namespace GlitchSuiteTest.UnitTests.GlitchFileTests
       Assert.That(file, Is.InstanceOf<BitmapGlitchFile>());
       Assert.That(file.RawData, Is.EqualTo(bytes));
     }
+
+    /// <summary>
+    /// Tests the creation of a <see cref="GlitchFileFactory"/>
+    /// without a <see cref="IFileOperator"/>.
+    /// </summary>
+    [Test]
+    public void NoFileOperatorTest()
+    {
+      // when: creating the factory without a IFileOperator
+      // then: ArgumentNullException
+      Assert.That(() => new GlitchFileFactory(null), Throws.ArgumentNullException);
+    }
   }
 }
