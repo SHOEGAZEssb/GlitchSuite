@@ -1,10 +1,22 @@
-﻿namespace GlitchSuite.GlitchFiles
+﻿using GlitchSuite.Bitmap;
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization.Formatters.Binary;
+
+namespace GlitchSuite.GlitchFiles
 {
   /// <summary>
   /// A Bitmap file to glitch.
   /// </summary>
   public class BitmapGlitchFile : GlitchFileBase
   {
+    #region Constants
+
+    public const string FILEHEADERNAME = "File Header";
+
+    #endregion Constants
+
     #region Construction
 
     /// <summary>
@@ -22,8 +34,7 @@
     /// </summary>
     protected override void ReadHeaderInfo()
     {
-      // read bfOffBits (start of image data) (offset: 10)
-      DataOffset = RawData[10];
+      Headers.Add(FILEHEADERNAME, EndianHelper.BytesToStruct<FileHeader>(RawData.SubArray(0, 14)));
     }
 
     #endregion Construction

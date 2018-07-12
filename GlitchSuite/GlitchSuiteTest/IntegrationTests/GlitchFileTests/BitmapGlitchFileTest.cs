@@ -1,5 +1,7 @@
-﻿using GlitchSuite.GlitchFiles;
+﻿using GlitchSuite.Bitmap;
+using GlitchSuite.GlitchFiles;
 using NUnit.Framework;
+using System.Linq;
 
 namespace GlitchSuiteTest.IntegrationTests.GlitchFileTests
 {
@@ -18,14 +20,14 @@ namespace GlitchSuiteTest.IntegrationTests.GlitchFileTests
     /// <summary>
     /// Path of the test pattern bitmap.
     /// </summary>
-    private const string TESTPATTERNPATH = TESTDATAPATH + "TestPattern_1280x800.bmp";
+    private const string TESTPATTERNPATH = TESTDATAPATH + "TestPattern_2x2_24bit.bmp";
 
     /// <summary>
     /// Tests if the header of a Bitmap file
     /// is read correctly.
     /// </summary>
     [Test]
-    public void ReadHeaderInfoTest()
+    public void ReadFileHeaderInfoTest()
     {
       // given: GlitchFileFactory
       GlitchFileFactory factory = new GlitchFileFactory();
@@ -33,8 +35,13 @@ namespace GlitchSuiteTest.IntegrationTests.GlitchFileTests
       // when: creating a BitmapGlitchFile
       var bm = factory.OpenFile(TESTPATTERNPATH);
 
-      // then: DataOffset correct
-      Assert.That(bm.DataOffset, Is.EqualTo(54));
+      // then: File Header correct
+      var header = (FileHeader)bm.Headers.FirstOrDefault().Value;
+
+      Assert.That(header.bfType, Is.EqualTo(16973));
+      Assert.That(header.bfSize, Is.EqualTo(70));
+      Assert.That(header.bfReserved, Is.EqualTo(0));
+      Assert.That(header.bfOffBits, Is.EqualTo(54));
     }
   }
 }

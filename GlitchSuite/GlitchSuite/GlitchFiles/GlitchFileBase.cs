@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GlitchSuite.GlitchFiles
 {
@@ -21,6 +22,8 @@ namespace GlitchSuite.GlitchFiles
     /// </summary>
     public int DataOffset { get; protected set; }
 
+    public IDictionary<string, IHeader> Headers { get; protected set; }
+
     #endregion Properties
 
     #region Construction
@@ -32,6 +35,7 @@ namespace GlitchSuite.GlitchFiles
     public GlitchFileBase(byte[] rawData)
     {
       RawData = rawData ?? throw new ArgumentNullException(nameof(rawData));
+      Headers = new Dictionary<string, IHeader>();
     }
 
     #endregion Construction

@@ -78,6 +78,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Bitmap\FileHeader.cs" />
+    <Compile Include="Endianness.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="GlitchFiles\BinaryGlitchFile.cs" />
     <Compile Include="GlitchFiles\BitmapGlitchFile.cs" />
     <Compile Include="GlitchFiles\GlitchFileBase.cs" />
@@ -85,6 +88,7 @@
     <Compile Include="GlitchFiles\IGlitchFile.cs" />
     <Compile Include="Helper\FileOperator.cs" />
     <Compile Include="Helper\IFileOperator.cs" />
+    <Compile Include="IHeader.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
